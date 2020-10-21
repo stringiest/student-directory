@@ -23,10 +23,10 @@ def print_header
 end
 
 def print(names)
-  names.each_with_index do |name, index|
-    if name[:name].length < 12
-      puts "#{(index + 1)}. #{name[:name]} (#{name[:cohort]} cohort)"
-    end
+  index = 0
+  while index < names.length do
+    puts "#{(index + 1)}. #{names[index][:name]} (#{names[index][:cohort]} cohort)"
+    index += 1
   end
 end
 
