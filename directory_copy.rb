@@ -25,7 +25,8 @@ end
 def print(names)
   index = 0
   while index < names.length do
-    puts "#{(index + 1)}. #{names[index][:name]} (#{names[index][:cohort]} cohort)"
+    puts "#{(index + 1)}. #{names[index][:name]}, #{names[index][:origin]} \
+    (#{names[index][:cohort]} cohort, hobby: #{names[index][:hobby]})"
     index += 1
   end
 end
