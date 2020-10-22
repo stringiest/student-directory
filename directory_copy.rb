@@ -12,6 +12,7 @@ def input_students
     cohort = input.split(", ")[1].to_sym
   end
   # while the name is not empty, repeat this code
+  # WHAT IF THE USER MAKES A TYPO? NOT ANSWERED...
   while !input.empty? do
     # add the student has to the array
     students << {name: name, cohort: cohort, hobby: :crime, origin: :England}
