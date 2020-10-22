@@ -6,7 +6,11 @@ def input_students
   # get the first name
   input = gets.chomp
   name = input.split(", ")[0]
-  cohort = input.split(", ")[1].to_sym
+  if input.split(", ")[1] == nil
+    cohort = :november
+  else
+    cohort = input.split(", ")[1].to_sym
+  end
   # while the name is not empty, repeat this code
   while !input.empty? do
     # add the student has to the array
@@ -15,7 +19,11 @@ def input_students
     # get another name from the user
     input = gets.chomp
     name = input.split(", ")[0]
-    cohort = input.split(", ")[1]
+    if input.split(", ")[1] == nil
+      cohort = :november
+    else
+      cohort = input.split(", ")[1].to_sym
+    end
     # to get name & cohort try using split on the input,
     # then use each perhaps to allocate first inde to name, second to cohort
   end
