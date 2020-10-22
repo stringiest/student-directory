@@ -1,17 +1,23 @@
 def input_students
-  puts "Please enter the names of the students"
+  puts "Please enter the names of the students: name, cohort"
   puts "To finish, just hit return twice"
   # create an empty array
   students = []
   # get the first name
-  name = gets.chomp
+  input = gets.chomp
+  name = input.split(", ")[0]
+  cohort = input.split(", ")[1].to_sym
   # while the name is not empty, repeat this code
-  while !name.empty? do
+  while !input.empty? do
     # add the student has to the array
-    students << {name: name, cohort: :november, hobby: :crime, origin: :England}
+    students << {name: name, cohort: cohort, hobby: :crime, origin: :England}
     puts "Now we have #{students.count} students"
     # get another name from the user
-    name = gets.chomp
+    input = gets.chomp
+    name = input.split(", ")[0]
+    cohort = input.split(", ")[1]
+    # to get name & cohort try using split on the input,
+    # then use each perhaps to allocate first inde to name, second to cohort
   end
   # return the array of students
   students
